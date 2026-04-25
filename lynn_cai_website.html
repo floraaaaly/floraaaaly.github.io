@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蔡卉颐 Lynn Cai — 内容策划 · Brand Visual Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --cream: #F5F0E8;
+    --cream-dark: #EDE7D9;
+    --ink: #1A1814;
+    --ink-mid: #4A4540;
+    --ink-light: #8A857E;
+    --accent: #2D5A8E;
+    --accent-light: #E8EFF7;
+    --serif-zh: 'Noto Serif SC', serif;
+    --serif-en: 'Playfair Display', serif;
+    --sans: 'DM Sans', sans-serif;
+    --border: rgba(26,24,20,0.12);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(245,240,232,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--serif-zh);
+    font-size: 15px; font-weight: 500;
+    letter-spacing: 0.05em; color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 12px; font-weight: 400;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-light); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 3rem 5rem;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 45%; height: 100%;
+    background: var(--cream-dark);
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 0;
+  }
+  .hero-eyebrow {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-light); margin-bottom: 2.5rem;
+    position: relative; z-index: 1;
+  }
+  .hero-name {
+    position: relative; z-index: 1;
+    margin-bottom: 3rem;
+    display: flex; align-items: baseline; gap: 1rem;
+  }
+  .hero-name-zh {
+    font-family: var(--serif-zh);
+    font-size: clamp(18px, 2.2vw, 26px);
+    font-weight: 500; line-height: 1;
+    color: var(--ink-mid); display: block;
+  }
+  .hero-name-en {
+    font-family: var(--serif-en);
+    font-size: clamp(15px, 1.8vw, 20px);
+    font-weight: 400; font-style: italic;
+    color: var(--ink-light); display: block;
+    letter-spacing: 0.04em;
+  }
+  .hero-tagline {
+    font-family: var(--serif-en);
+    font-size: clamp(28px, 4vw, 48px);
+    font-style: italic; color: var(--ink);
+    margin-bottom: 3rem; position: relative; z-index: 1;
+    letter-spacing: 0.01em; line-height: 1.3; font-weight: 400;
+  }
+  .hero-tagline em { color: var(--accent); font-style: italic; }
+  .hero-actions { display: flex; gap: 1rem; position: relative; z-index: 1; }
+  .btn {
+    font-family: var(--sans); font-size: 12px;
+    font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.75rem 2rem; cursor: pointer;
+    border-radius: 2px; text-decoration: none;
+    transition: all 0.2s; display: inline-block;
+  }
+  .btn-primary {
+    background: var(--ink); color: var(--cream);
+    border: 1px solid var(--ink);
+  }
+  .btn-primary:hover { background: var(--ink-mid); border-color: var(--ink-mid); }
+  .btn-secondary {
+    background: transparent; color: var(--ink);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover { border-color: var(--ink); }
+  .hero-scroll {
+    position: absolute; bottom: 2rem; left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--ink-light); z-index: 1;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+  }
+  .hero-scroll::after {
+    content: ''; width: 1px; height: 40px;
+    background: var(--ink-light);
+    animation: scrollLine 1.5s ease-in-out infinite;
+  }
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; opacity: 0; }
+    50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+    100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
+  }
+
+  /* ── SECTIONS ── */
+  .section { padding: 7rem 3rem; }
+  .section-inner { max-width: 860px; margin: 0 auto; }
+  .section-header {
+    display: flex; align-items: baseline; gap: 1.5rem;
+    margin-bottom: 4rem;
+    border-bottom: 0.5px solid var(--border);
+    padding-bottom: 1.5rem;
+  }
+  .section-num {
+    font-family: var(--serif-en); font-size: 13px;
+    font-style: italic; color: var(--ink-light);
+  }
+  .section-title-zh {
+    font-family: var(--serif-zh); font-size: 22px; font-weight: 500;
+  }
+  .section-title-en {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--ink-light); margin-left: auto;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-quote {
+    font-family: var(--serif-en);
+    font-size: 18px; font-style: italic;
+    line-height: 1.8; color: var(--ink-mid);
+    border-left: 2px solid var(--accent);
+    padding-left: 1.5rem; margin-bottom: 2rem;
+  }
+  .about-text { font-size: 14px; color: var(--ink-mid); line-height: 1.95; }
+  .about-text p + p { margin-top: 1.2rem; }
+  .about-skills { margin-top: 3rem; }
+  .skills-label {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-light); margin-bottom: 1rem;
+  }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .skill-item {
+    font-size: 12px; color: var(--ink-mid);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .skill-item::before {
+    content: ''; width: 4px; height: 4px;
+    background: var(--accent); border-radius: 50%; flex-shrink: 0;
+  }
+  .about-side {}
+  .about-highlight {
+    background: var(--cream-dark);
+    padding: 2rem; margin-bottom: 1.5rem;
+  }
+  .highlight-num {
+    font-family: var(--serif-en);
+    font-size: 44px; font-weight: 400; font-style: italic;
+    color: var(--ink); line-height: 1;
+  }
+  .highlight-label { font-size: 12px; color: var(--ink-light); margin-top: 0.4rem; }
+  .highlight-label span { display: block; color: var(--ink-mid); }
+  .about-tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.5rem; }
+  .tag {
+    font-size: 11px; padding: 4px 12px;
+    border: 0.5px solid var(--border);
+    color: var(--ink-mid); letter-spacing: 0.04em;
+  }
+
+  /* ── EXPERIENCE ── */
+  .exp-item {
+    display: grid; grid-template-columns: 120px 1fr;
+    gap: 2rem; padding: 2.5rem 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .exp-item:first-child { border-top: 0.5px solid var(--border); }
+  .exp-date { font-size: 12px; color: var(--ink-light); padding-top: 3px; line-height: 1.8; }
+  .exp-role { font-family: var(--serif-zh); font-size: 17px; font-weight: 500; margin-bottom: 0.3rem; }
+  .exp-company { font-size: 13px; color: var(--accent); margin-bottom: 0.8rem; letter-spacing: 0.02em; }
+  .exp-desc { font-size: 13px; color: var(--ink-mid); line-height: 1.85; }
+  .exp-stats { display: flex; gap: 1.5rem; margin-top: 1.2rem; flex-wrap: wrap; }
+  .stat { text-align: left; }
+  .stat-num {
+    font-family: var(--serif-en); font-size: 20px;
+    font-style: italic; color: var(--ink); display: block;
+  }
+  .stat-label { font-size: 11px; color: var(--ink-light); }
+
+  /* ── EDUCATION ── */
+  .edu-item {
+    display: grid; grid-template-columns: 120px 1fr;
+    gap: 2rem; padding: 2.5rem 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .edu-item:first-child { border-top: 0.5px solid var(--border); }
+  .edu-date { font-size: 12px; color: var(--ink-light); padding-top: 3px; }
+  .edu-degree { font-family: var(--serif-en); font-size: 17px; font-weight: 400; font-style: italic; margin-bottom: 0.25rem; }
+  .edu-major { font-size: 13px; color: var(--ink-mid); margin-bottom: 0.25rem; }
+  .edu-school { font-size: 13px; color: var(--accent); margin-bottom: 0.8rem; }
+  .edu-desc { font-size: 13px; color: var(--ink-mid); line-height: 1.85; }
+
+  /* ── CONTACT ── */
+  .contact-section { background: var(--ink); color: var(--cream); }
+  .contact-section .section-title-zh { color: var(--cream); }
+  .contact-section .section-num { color: rgba(245,240,232,0.4); }
+  .contact-section .section-title-en { color: rgba(245,240,232,0.4); }
+  .contact-section .section-header { border-bottom-color: rgba(245,240,232,0.12); }
+  .contact-lead {
+    font-family: var(--serif-en);
+    font-size: 17px; font-style: italic;
+    color: rgba(245,240,232,0.7);
+    margin-bottom: 3rem; max-width: 480px; line-height: 1.8;
+  }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 480px; }
+  .contact-label {
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(245,240,232,0.4); margin-bottom: 0.4rem;
+  }
+  .contact-value { font-size: 14px; color: var(--cream); }
+  .contact-location { margin-top: 2.5rem; padding-top: 2rem; border-top: 0.5px solid rgba(245,240,232,0.12); }
+  .contact-location p { font-size: 13px; color: rgba(245,240,232,0.5); }
+  .contact-location span { color: rgba(245,240,232,0.8); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    border-top: 0.5px solid rgba(245,240,232,0.12);
+    padding: 1.5rem 3rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  footer p { font-size: 11px; color: rgba(245,240,232,0.35); letter-spacing: 0.05em; }
+
+  /* ── FADE IN ── */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.5rem; }
+    .hero { padding: 0 1.5rem 4rem; }
+    .hero::before { width: 100%; clip-path: none; opacity: 0.4; }
+    .section { padding: 5rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .exp-item, .edu-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .contact-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">蔡卉颐 Lynn Cai</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-eyebrow">内容策划 · Brand Visual Design</div>
+  <div class="hero-tagline">
+    <em>Think Clearly.</em><br>Write Beautifully.<br>Create Meaningfully.
+  </div>
+  <div class="hero-name">
+    <span class="hero-name-zh">蔡卉颐</span>
+    <span class="hero-name-en">Lynn Cai</span>
+  </div>
+  <div class="hero-actions">
+    <a href="mailto:floraaaaly@gmail.com" class="btn btn-primary">Get in Touch</a>
+    <a href="#about" class="btn btn-secondary">Learn More</a>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="section-num">01</span>
+      <h2 class="section-title-zh">关于我</h2>
+      <span class="section-title-en">About</span>
+    </div>
+    <div class="about-grid">
+      <div class="fade-in">
+        <div class="about-quote">Think Clearly. Write Beautifully. Create Meaningfully.</div>
+        <div class="about-text">
+          <p>我是蔡卉颐，一名内容创作者与品牌工作者，长期关注品牌表达、视觉设计，以及生活方式领域。</p>
+          <p>对我来说，好的内容不仅是信息传递，更是一种审美、一种理解世界的方式。我喜欢从"用户会不会被打动"出发，研究那些看似细微却真正影响体验的部分——一句文案的节奏、一张海报的留白，或是一件产品背后的思考。</p>
+          <p>我相信，好奇心是起点，理解是过程，而表达让人与世界建立连接。</p>
+        </div>
+        <div class="about-skills">
+          <div class="skills-label">Core Skills · 核心能力</div>
+          <div class="skills-grid">
+            <div class="skill-item">品牌内容策划</div>
+            <div class="skill-item">Brand Content Strategy</div>
+            <div class="skill-item">新媒体运营</div>
+            <div class="skill-item">Social Media Operations</div>
+            <div class="skill-item">活动策划执行</div>
+            <div class="skill-item">Event Planning & Execution</div>
+            <div class="skill-item">品牌视觉设计</div>
+            <div class="skill-item">Brand Visual Design</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-side fade-in">
+        <div class="about-highlight">
+          <div class="highlight-num">200+</div>
+          <div class="highlight-label">
+            原创内容
+            <span>Original Content Pieces</span>
+          </div>
+        </div>
+        <div class="about-highlight">
+          <div class="highlight-num">100w+</div>
+          <div class="highlight-label">
+            品牌话题累计曝光
+            <span>Cumulative Brand Impressions</span>
+          </div>
+        </div>
+        <div class="about-highlight">
+          <div class="highlight-num">IELTS 7.0</div>
+          <div class="highlight-label">
+            中英双语内容输出
+            <span>Bilingual Content Capability</span>
+          </div>
+        </div>
+        <div class="about-tag-row">
+          <span class="tag">手帐 11年</span>
+          <span class="tag">雅思 7.0</span>
+          <span class="tag">Photoshop / Illustrator / C4D</span>
+          <span class="tag">中英双语写作</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience" style="background: var(--cream-dark);">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="section-num">02</span>
+      <h2 class="section-title-zh">工作经历</h2>
+      <span class="section-title-en">Work Experience</span>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-date">2022 — 2025<br>重庆</div>
+      <div>
+        <div class="exp-role">企划部经理</div>
+        <div class="exp-company">重庆泰阁咖啡有限公司 · Chongqing Taige Coffee</div>
+        <div class="exp-desc">
+          负责品牌内容策略与多平台新媒体运营，从文案执行成长为部门负责人，搭建品牌内容与活动策略体系。参与策划品牌在陆家嘴咖啡节、上海进博会（与佳农联名）、重庆国际咖啡节等活动中的方案制定与执行落地，跨部门协作确保活动顺利推进。
+          <br><br>
+          Led brand content strategy and multi-platform social media operations. Grew from copywriter to department head. Co-planned brand presence at major events including Lujiazui Coffee Festival, CIIE Shanghai, and Chongqing International Coffee Festival.
+        </div>
+        <div class="exp-stats">
+          <div class="stat"><span class="stat-num">200+</span><span class="stat-label">原创内容 / Content Pieces</span></div>
+          <div class="stat"><span class="stat-num">1w+</span><span class="stat-label">粉丝增长 / Follower Growth</span></div>
+          <div class="stat"><span class="stat-num">100w+</span><span class="stat-label">累计曝光 / Impressions</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-date">2020 — 2022<br>江苏</div>
+      <div>
+        <div class="exp-role">活动策划执行</div>
+        <div class="exp-company">江苏文创文化发展有限公司 · Jiangsu Wenchuang Culture</div>
+        <div class="exp-desc">
+          负责展览及会议活动的全流程策划与执行，包括行业政策分析、招商方案策划、现场统筹及后期跟进，独立完成企业对外宣传材料与商业化展览招商方案。
+          <br><br>
+          Managed end-to-end planning and execution of exhibitions and conferences. Independently produced promotional materials and commercial sponsorship proposals.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="education">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="section-num">03</span>
+      <h2 class="section-title-zh">教育背景</h2>
+      <span class="section-title-en">Education</span>
+    </div>
+
+    <div class="edu-item fade-in">
+      <div class="edu-date">2019 — 2020</div>
+      <div>
+        <div class="edu-degree">MA — Arts, Business & Creativity</div>
+        <div class="edu-major">艺术、商业与创造力 硕士</div>
+        <div class="edu-school">Newcastle University · 纽卡斯尔大学</div>
+        <div class="edu-desc">
+          核心课程涵盖创意产业理论与实践、跨文化商业分析、商业计划撰写。通过浸入式学习加深了对中英两国文创产业的理解，具备跨文化团队协作经验。
+          <br><br>
+          Key modules: Creative Industries Theory & Practice, Cross-cultural Business Analysis, Business Plan Writing. Gained cross-cultural collaboration experience through immersive study in the UK.
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-item fade-in">
+      <div class="edu-date">2014 — 2018</div>
+      <div>
+        <div class="edu-degree">BA — Cultural Industry Management</div>
+        <div class="edu-major">文化产业管理 学士</div>
+        <div class="edu-school">南京艺术学院 · Nanjing University of Arts</div>
+        <div class="edu-desc">
+          核心课程涵盖文化产业经济学、大众传媒管理、影视项目策划与营销发行等。在校期间任学生会秘书处干事，负责策划及执行校级活动。
+          <br><br>
+          Core modules: Cultural Industry Economics, Mass Media Management, Film & TV Project Planning. Served as Student Union Secretary, coordinating campus events.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact-section" id="contact">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="section-num">04</span>
+      <h2 class="section-title-zh">联系我</h2>
+      <span class="section-title-en">Contact</span>
+    </div>
+    <div class="contact-lead fade-in">
+      欢迎品牌合作、内容策划或工作机会的联系。<br>
+      <em style="font-size:15px;">Open to brand collaborations, content projects, and new opportunities.</em>
+    </div>
+    <div class="contact-grid fade-in">
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">floraaaaly@gmail.com</div>
+      </div>
+      <div>
+        <div class="contact-label">Phone · 电话</div>
+        <div class="contact-value">139 1455 1972</div>
+      </div>
+    </div>
+    <div class="contact-location fade-in">
+      <p>基于 <span>上海 Shanghai</span> · 开放远程合作 <span>Open to remote</span></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 蔡卉颐 Lynn Cai</p>
+  <p>内容策划 · Brand Visual Design</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
